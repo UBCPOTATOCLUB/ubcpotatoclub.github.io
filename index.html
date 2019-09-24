@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-	   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	
-	<title>UBCO Potato Club</title>
-	
-	<style>
-		.navbar-brand {
-			background: -webkit-linear-gradient(270deg, #00ffeb, #00c5ff, #7600ff);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-		
-		.iframe {
-			position:absolute; 
-			height:100%; 
-			width:100%;
-			bottom:0px; 
-			right:0px; 
-			border:0px; 
-			background: none;
-			opacity: 0.5;
-			z-index: 1;
-		}
-  </style>
-	
+
 	<script>
 		var pos = [0,333,666];
 		var potato = [document.createElement("IMG"), document.createElement("img"), 
-		document.createElement("IMG")];
-		var potato2 = [document.createElement("IMG"), document.createElement("img"), 
 		document.createElement("IMG")];
 
 		for(var i=0;i<3;i++)
@@ -45,30 +17,20 @@
 			potato[i].style.height = "100px";
 			potato[i].style.left = "10px";
 			potato[i].style.top = pos[i] + "px";
-			potato[i].style.zindex = "3;"
-			
-		}
-		
-				for(var i=0;i<3;i++)
-		{
-			potato2[i].src = "p1.png";
-			potato2[i].style.position = "fixed";
-			potato2[i].style.width = "100px";
-			potato2[i].style.height = "100px";
-			potato2[i].style.right = "10px";
-			potato2[i].style.top = pos[i] + "px";
-			potato2[i].style.zindex = "3;"
+			potato[i].style.zIndex = "-1;"
 			
 		}
 		
 
 		function move()
 		{
-			for (var i = 0; i < 6; i++)
+			for (var i = 0; i < 3; i++)
 			{
 				pos[i] += 1;
 				potato[i].style.top = pos[i] + "px";
-				potato2[i].style.top = pos[i] + "px";
+
+				console.log(pos[i]);
+
 				if (pos[i] > 1000) pos[i] = 50;
 			}
 			
@@ -80,110 +42,147 @@
 			document.body.insertBefore(potato[0],cnt);
 			document.body.insertBefore(potato[1],cnt);
 			document.body.insertBefore(potato[2],cnt);
-			document.body.insertBefore(potato2[0],cnt);
-			document.body.insertBefore(potato2[1],cnt);
-			document.body.insertBefore(potato2[2],cnt);
-			
 
 			window.setInterval(move, 2);
 		}
 		
 		window.onload = main;
 	</script>
-	<script>
-		function fthis(){
-			$("#dont").fadeOut("slow");
-		
-			$("body").prepend("<iframe src='https://0x40.mon.im/' class='iframe' ></iframe>");  
+
+	<style>
+		body
+		{
+			left: 50%;
+			right: 50%;
+			width: 100;
+			size: 100%;
+			
+			/*background-image: url("https://github.com/UBCPOTATOCLUB/ubcpotatoclub.github.io/blob/master/p1.png?raw=true");
+			background-size: 100px, 100px;
+			background-repeat: no-repeat;*/
+			 
+			background-color: rgb(55, 55, 58);
+			/*font-family: "Comic Sans MS";*/
+			font-family: Impact;
 		}
+		
+		header
+		{
+			text-align: left;
+		
+			background-color: rgb(55, 55, 58);	
+			
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-left: 2%;
+			
+			margin-top: -1%;
+			margin-left: -2%;
+			margin-right: -2%;
+			margin-bottom: 0%;
+			
+		}
+
+		header #h
+		{
+			text-decoration: none;
+			color: white;
+			font-size: 30px;
+		}
+
+		header #h:hover
+		{
+			color:gray;
+		}
+
+		header a
+		{
+			text-decoration: none;
+			color: white;
+			font-size: 20px;
+			padding-left: 10px;
+		}
+
+		header a:hover
+		{
+			color:gray;
+		}
+
+		#content
+		{
+			background-color: rgb(94, 94, 98);	
+			margin-left: 10%;
+			margin-right: 10%;
+			margin-bottom: 0%;
+			margin-top: 0%;
+		}
+		
+		#info
+		{
+			color: white;
+			
+			width: 100%;
+			left: 50%;
+			right: 50%;
+			text-align: center;
+		}
+
+		h1
+		{
+			font-size: 40px;
+		}
+
+		p
+		{
+			font-size: 30px;
+		}
+
+		#schedule
+		{
+			color: white;
+			
+			width: 100%;
+			left: 50%;
+			right: 50%;
+			text-align: center;
+		}
+
+		
+		
+	</style>
+
+	<script>
+		
 	</script>
 </head>
 
 <body>
 	
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: 2">
-  <a class="navbar-brand" href="/">The POTATO Club</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-		<li class="nav-item">
-			<a class="nav-link" href="#info">info</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#schedule">schedule</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="oldpage.html">old page</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="olderpage.html">older page</a>
-		</li>
-    </ul>
-	<button class="btn btn-outline-danger my-2 my-sm-0" id="dont" data-toggle="modal" data-target="#modal">don't click me</button>
-  </div>
-</nav>
-<br>
-<div class="container">
-<div class="jumbotron" id=#info">
-  <div class="container">
-    <h1 class="display-4">Information</h1>
-  </div>
-</div>
+    <header>
+		<a id="h" href="index.html">The POTATO Club</a>
+		<a href="#info">info</a>
+		<a href="#schedule">schedule</a>
+		<a href="oldpage.html">old page</a>
+    </header>
+	
+	<div id="content">
+		<br>
+		<div id="info">
+			<h1>Information</h1>
+			<p>you shall not plant it in very hot places</p>
+			<p>you shall not plant it in shady places</p>
+			<p>you shall spread it evenly</p>
+		</div>
+		<br>
+		<div id="schedule">
+			<h1>schedule</h1>
+			<img src="schedule.png">
+		</div>
+		<br>
+	</div>
 
-<div class="row">
-  <div class="col-sm-4">
-    <div class="card" style="width: 18rem;">
+	
 
-  <div class="card-body">
-	<h5 class="card-title">1.</h5>
-    <p class="card-text">you shall not plant it in very hot places</p>
-  </div>
-</div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card" style="width: 18rem;">
-
-  <div class="card-body">
-  	<h5 class="card-title">2.</h5>
-    <p class="card-text">you shall not plant it in shady places</p>
-  </div>
-  </div>
-</div>
-<div class="col-sm-4">
-    <div class="card" style="width: 18rem;">
-
-  <div class="card-body">
-  	<h5 class="card-title">3.</h5>
-    <p class="card-text">you shall spread it evenly</p>
-  </div>
-  </div>
-</div>
-</div>
-<hr>
-<div class="d-flex justify-content-center">
-	<img src="schedule.png">
-</div>
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modallabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modallabel">Are you sure?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <span style="color: red">*** epilepsy warning and sound warning*** </span>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="fthis()" data-dismiss="modal">do it</button>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>
