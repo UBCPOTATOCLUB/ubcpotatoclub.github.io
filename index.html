@@ -32,6 +32,7 @@
 	
 	<script>
 		var pos = [0,333,666];
+		var pos2 = [0,333,666];
 		var potato = [document.createElement("IMG"), document.createElement("img"), 
 		document.createElement("IMG")];
 		var potato2 = [document.createElement("IMG"), document.createElement("img"), 
@@ -64,14 +65,18 @@
 
 		function move()
 		{
-			for (var i = 0; i < 6; i++)
+			for (var i = 0; i < 3; i++)
 			{
 				pos[i] += 1;
 				potato[i].style.top = pos[i] + "px";
-				potato2[i].style.top = pos[i] + "px";
 				if (pos[i] > 1000) pos[i] = 50;
 			}
-			
+			for (var i = 0; i < 3; i++)
+			{
+				pos2[i] += 1;
+				potato2[i].style.top = pos2[i] + "px";
+				if (pos2[i] > 1000) pos2[i] = 50;
+			}
 		}
 
 		function main()
